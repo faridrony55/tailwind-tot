@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer{
+    .menuitem{
+        @apply hover:bg-gray-700 px-3 py-2 rounded-md text-sm text-slate-200  
+    }
+ 
+    
+}
+
+@layer {
+    .scrollText{
+        color: black;
+        position: relative;
+        font-size: 100px;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black; 
+        font-size: 900% !important;
+
+        font-family: initial;
+
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-duration: 50s;
+        animation-iteration-count: infinite;
+        animation-name: scrollText;
+        animation-direction: alternate;
+        z-index: -1;
+        
+    }
+    .animate-marquee {
+        animation: marquee var(--marquee-duration) linear infinite;
+    }
+    .animate-marquee-left{
+        animation: marqueeleft var(--marquee-duration-left) linear infinite !important;
+    }
+
+    .animate-fade-in {
+        animation: fade-in .5s linear forwards;
+    }
+    @keyframes scrollText {
+        to{
+            left:100%;
+        } 
+        
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes marquee {
+        100% {
+            transform: translateY(-50%);
+        }
+    }
+    @keyframes marqueeleft {
+       from { 
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-50%);
+            
+        }
+    }
+}
